@@ -39,7 +39,7 @@ function getAllPokemonNames(pokemon) {
   if (pokemon.length === 1) {
     throw `Error: There needs to be more than one element`;
   }
-  return (pokemonNames = pokemon.map(({ name }) => name));
+  return pokemon.map(({ name }) => name);
   //reduce version
   // return pokemon.reduce((acc, el) => {
   //   acc = [...acc, el.name];
