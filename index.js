@@ -135,7 +135,14 @@ function findByName(pokemon, id) {
  *  filterByType(pokemon, "psychic")
  *  //> []
  */
-function filterByType() {}
+function filterByType(pokemon, genre) {
+  let pokeArr = [];
+  pokeArr = pokemon.filter((poke) => {
+    return poke.types.find((el) => el.type.name.toUpperCase() === genre.toUpperCase())
+  })
+  return pokeArr;
+  //reduce version
+}
 
 /**
  * checkMinBaseExperience()
