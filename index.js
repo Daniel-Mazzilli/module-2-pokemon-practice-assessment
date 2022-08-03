@@ -39,8 +39,12 @@ function getAllPokemonNames(pokemon) {
   if (pokemon.length === 1) {
     throw `Error: There needs to be more than one element`;
   }
-  const pokemonNames = pokemon.map(({ name }) => name);
-  return pokemonNames;
+  return (pokemonNames = pokemon.map(({ name }) => name));
+  //reduce version
+  // return pokemon.reduce((acc, el) => {
+  //   acc = [...acc, el.name];
+  //   return acc;
+  // }, []);
 }
 
 /**
@@ -61,7 +65,16 @@ function getAllPokemonNames(pokemon) {
  *  checkIfAnyPokemonWeighsLessThan(pokemon, 18);
  *  //> false
  */
-function checkIfAnyPokemonWeighsLessThan() {}
+function checkIfAnyPokemonWeighsLessThan(pokemon, weight = 19) {
+  return pokemon.some((pokemon) => pokemon.weight < weight);
+  //reduce version
+  // return pokemon.reduce((acc, el) => {
+  //   if (el.weight < weight) {
+  //     acc = true;
+  //   }
+  //   return acc;
+  // }, false);
+}
 
 /**
  * findByName()
