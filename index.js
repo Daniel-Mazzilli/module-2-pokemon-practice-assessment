@@ -92,7 +92,24 @@ function checkIfAnyPokemonWeighsLessThan(pokemon, weight = 19) {
       // clefable
     };
  */
-function findByName() {}
+function findByName(pokemon, id) {
+  //typo in test. Checks pokeId instead of name
+  let val = pokemon.find((el) => el.pokeId === id);
+  if (val === undefined) {
+    val = null;
+  }
+  return val;
+  //reduce version
+  // return pokemon.reduce((acc, el) => {
+  //   if(acc !== null){
+  //     return acc;
+  //   }
+  //   if(el.pokeId === id){
+  //     acc = el;
+  //   }
+  //   return acc;
+  // }, null);
+}
 
 /**
  * filterByType()
