@@ -35,7 +35,13 @@ const examplePokemon = require("./pokemon.js");
 ];
  */
 
-function getAllPokemonNames() {}
+function getAllPokemonNames(pokemon) {
+  if (pokemon.length === 1) {
+    throw `Error: There needs to be more than one element`;
+  }
+  const pokemonNames = pokemon.map(({ name }) => name);
+  return pokemonNames;
+}
 
 /**
  * checkIfAnyPokemonWeighsLessThan()
