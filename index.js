@@ -159,7 +159,16 @@ function filterByType(pokemon, genre) {
  *  //>  false
  */
 
-function checkMinBaseExperience(pokemon, baseExperience) {}
+function checkMinBaseExperience(pokemon, baseExperience) {
+  return pokemon.every((el) => el.base_experience > baseExperience)
+  //reduce method
+  // return pokemon.reduce((acc, { base_experience }) => {
+  //   if(base_experience <= baseExperience){
+  //     acc = false;
+  //   }
+  //   return acc;
+  // }, true);
+}
 
 module.exports = {
   getAllPokemonNames,
